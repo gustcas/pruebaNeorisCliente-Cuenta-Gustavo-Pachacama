@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/sistemaBancario
+    username: admin
+    password: admin.01
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: 'true'
+    hibernate:
+      ddl-auto: update
+  application:
+    name: cliente
+server:
+  port: '8081'
+  servlet:
+    context-path: /api
+
+kafka:
+  bootstrap-servers: kafka:9092
+  topic:
+    cliente-creado: cliente-creado
